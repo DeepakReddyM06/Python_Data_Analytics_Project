@@ -67,7 +67,7 @@ Each Jupyter notebook for this project aimed at investigating specific aspects o
 
 To find the most demanded skills for the top 3 most popular data roles. I filtered out those positions by which ones were the most popular, and got the top 5 skills for these top 3 roles. This query highlights the most popular job titles and their top skills, showing which skills I should pay attention to depending on the role I'm targeting. 
 
-View my notebook with detailed steps here: [2_Skill_Demand](Projects/2_Skill_Demand.ipynb).
+View my notebook with detailed steps here: [2_Skill_Demand](Project/2_Skill_Demand.ipynb).
 
 ### Visualize Data
 
@@ -84,7 +84,7 @@ plt.show()
 
 ### Results
 
-![Likelihood of Skills Requested in the India Job Postings](Projects/Images/skill_demand.png)
+![Likelihood of Skills Requested in the India Job Postings](Project/Images/skill_demand.png)
 
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
@@ -98,7 +98,7 @@ plt.show()
 
 To find how skills are trending in 2023 for Data Analysts, I filtered data analyst positions and grouped the skills by the month of the job postings. This got me the top 5 skills of data analysts by month, showing how popular skills were throughout 2023.
 
-View my notebook with detailed steps here: [3_Skills_Trend](Projects/3_Skills_trend.ipynb).
+View my notebook with detailed steps here: [3_Skills_Trend](Project/3_Skills_trend.ipynb).
 
 ### Visualize Data
 
@@ -117,7 +117,7 @@ plt.show()
 
 ### Results
 
-![Trending Top Skills for Data Analysts in the India](Projects/Images/skill_trend.png)  
+![Trending Top Skills for Data Analysts in the India](Project/Images/skill_trend.png)  
 *Bar graph visualizing the trending top skills for data analysts in the India in 2023.*
 
 ### Insights:
@@ -129,7 +129,7 @@ plt.show()
 
 To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
 
-View my notebook with detailed steps here: [4_Salary_Analysis](Projects/4_Salary_Analysis.ipynb).
+View my notebook with detailed steps here: [4_Salary_Analysis](Project/4_Salary_Analysis.ipynb).
 
 #### Visualize Data 
 
@@ -144,7 +144,7 @@ plt.show()
 
 #### Results
 
-![Salary Distributions of Data Jobs in the India](Projects/Images/salary_distribution.png)  
+![Salary Distributions of Data Jobs in the India](Project/Images/salary_distribution.png)  
 *Box plot visualizing the salary distributions for the top 6 data job titles.*
 
 #### Insights
@@ -208,7 +208,7 @@ plt.show()
 
 #### Results
 
-![Most Optimal Skills for Data Analysts in the India](Projects/Images/optimal_skills.png)    
+![Most Optimal Skills for Data Analysts in the India](Project/Images/optimal_skills.png)    
 *A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the India.*
 
 #### Insights:
