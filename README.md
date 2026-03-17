@@ -84,7 +84,7 @@ plt.show()
 
 ### Results
 
-![Likelihood of Skills Requested in the India Job Postings](Projects/Images/skill_demand.png)
+![Likelihood of Skills Requested in the India Job Postings](.Projects/Images/skill_demand.png)
 
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
