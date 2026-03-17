@@ -13,7 +13,7 @@ Below are the questions I want to answer in my project:
 3. How well do jobs and skills pay for Data Analysts?
 4. What are the optimal skills for data analysts to learn? (High Demand AND High Paying) 
 
-# Tools I Indiaed
+# Tools I used
 
 For my deep dive into the data analyst job market, I harnessed the power of several key tools:
 
@@ -52,10 +52,10 @@ df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.no
 
 ## Filter India Jobs
 
-To focIndia my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the United States.
+To focIndia my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the India.
 
 ```python
-df_India = df[df['job_country'] == 'United States']
+df_India = df[df['job_country'] == 'India']
 
 ```
 
@@ -127,7 +127,7 @@ plt.show()
 
 ## 3. How well do jobs and skills pay for Data Analysts?
 
-To identify the highest-paying roles and skills, I only got jobs in the United States and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
+To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
 
 View my notebook with detailed steps here: [4_Salary_Analysis](4_Salary_Analysis.ipynb).
 
@@ -208,7 +208,7 @@ plt.show()
 
 #### Results
 
-![Most Optimal Skills for Data Analysts in the India](Projects\Images\salary_distribution.png)    
+![Most Optimal Skills for Data Analysts in the India](Projects\Images\optimal_skills.png)    
 *A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the India.*
 
 #### Insights:
@@ -247,7 +247,7 @@ This project was not without its challenges, but it provided good learning oppor
 - **Balancing Breadth and Depth**: Deciding how deeply to dive into each analysis while maintaining a broad overview of the data landscape required constant balancing to ensure comprehensive coverage without getting lost in details.
 
 
-# ConclIndiaion
+# Conclusion
 
 This exploration into the data analyst job market has been incredibly informative, highlighting the critical skills and trends that shape this evolving field. The insights I got enhance my understanding and provide actionable guidance for anyone looking to advance their career in data analytics. As the market continues to change, ongoing analysis will be essential to stay ahead in data analytics. This project is a good foundation for future explorations and underscores the importance of continuoIndia learning and adaptation in the data field.
 
