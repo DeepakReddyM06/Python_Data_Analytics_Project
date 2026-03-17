@@ -1,8 +1,8 @@
 # Overview
 
-Welcome to my analysis of the data job market, focIndiaing on data analyst roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data analysts.
+Welcome to my analysis of the data job market, focusing on data analyst roles. This project was created out of a desire to navigate and understand the job market more effectively. It delves into the top-paying and in-demand skills to help find optimal job opportunities for data analysts.
 
-The data sourced from [Luke BaroIndiase's Python Course](https://lukebaroIndiase.com/python) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
+The data sourced from [Luke Barousse's Python Course](https://lukebarousse.com/python) which provides a foundation for my analysis, containing detailed information on job titles, salaries, locations, and essential skills. Through a series of Python scripts, I explore key questions such as the most demanded skills, salary trends, and the intersection of demand and salary in data analytics.
 
 # The Questions
 
@@ -17,17 +17,17 @@ Below are the questions I want to answer in my project:
 
 For my deep dive into the data analyst job market, I harnessed the power of several key tools:
 
-- **Python:** The backbone of my analysis, allowing me to analyze the data and find critical insights.I also Indiaed the following Python libraries:
-    - **Pandas Library:** This was Indiaed to analyze the data. 
+- **Python:** The backbone of my analysis, allowing me to analyze the data and find critical insights.I also used the following Python libraries:
+    - **Pandas Library:** This was used to analyze the data. 
     - **Matplotlib Library:** I visualized the data.
     - **Seaborn Library:** Helped me create more advanced visuals. 
-- **Jupyter Notebooks:** The tool I Indiaed to run my Python scripts which let me easily include my notes and analysis.
+- **Jupyter Notebooks:** The tool I used to run my Python scripts which let me easily include my notes and analysis.
 - **Visual Studio Code:** My go-to for executing my Python scripts.
 - **Git & GitHub:** Essential for version control and sharing my Python code and analysis, ensuring collaboration and project tracking.
 
 # Data Preparation and Cleanup
 
-This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and Indiaability.
+This section outlines the steps taken to prepare the data for analysis, ensuring accuracy and usability.
 
 ## Import & Clean Up Data
 
@@ -42,7 +42,7 @@ from datasets import load_dataset
 import matplotlib.pyplot as plt  
 
 # Loading Data
-dataset = load_dataset('lukebaroIndiase/data_jobs')
+dataset = load_dataset('lukebarousse/data_jobs')
 df = dataset['train'].to_pandas()
 
 # Data Cleanup
@@ -50,12 +50,12 @@ df['job_posted_date'] = pd.to_datetime(df['job_posted_date'])
 df['job_skills'] = df['job_skills'].apply(lambda x: ast.literal_eval(x) if pd.notna(x) else x)
 ```
 
-## Filter India Jobs
+## Filter us Jobs
 
-To focIndia my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the India.
+To focus my analysis on the U.S. job market, I apply filters to the dataset, narrowing down to roles based in the us.
 
 ```python
-df_India = df[df['job_country'] == 'India']
+df_us = df[df['job_country'] == 'India']
 
 ```
 
@@ -84,7 +84,7 @@ plt.show()
 
 ### Results
 
-![Likelihood of Skills Requested in the India Job Postings](Projects/Images/skill_demand.png)
+![Likelihood of Skills Requested in the us Job Postings](Projects/Images/skill_demand.png)
 
 *Bar graph visualizing the salary for the top 3 data roles and their top 5 skills associated with each.*
 
@@ -106,7 +106,7 @@ View my notebook with detailed steps here: [3_Skills_Trend](Projects/3_Skills_tr
 
 from matplotlib.ticker import PercentFormatter
 
-df_plot = df_DA_India_percent.iloc[:, :5]
+df_plot = df_DA_us_percent.iloc[:, :5]
 sns.lineplot(data=df_plot, dashes=False, legend='full', palette='tab10')
 
 plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
@@ -117,8 +117,8 @@ plt.show()
 
 ### Results
 
-![Trending Top Skills for Data Analysts in the India](Projects/Images/skill_trend.png)  
-*Bar graph visualizing the trending top skills for data analysts in the India in 2023.*
+![Trending Top Skills for Data Analysts in the us](Projects/Images/skill_trend.png)  
+*Bar graph visualizing the trending top skills for data analysts in the us in 2023.*
 
 ### Insights:
 - SQL remains the most consistently demanded skill throughout the year, although it shows a gradual decrease in demand.
@@ -127,14 +127,14 @@ plt.show()
 
 ## 3. How well do jobs and skills pay for Data Analysts?
 
-To identify the highest-paying roles and skills, I only got jobs in the India and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
+To identify the highest-paying roles and skills, I only got jobs in the us and looked at their median salary. But first I looked at the salary distributions of common data jobs like Data Scientist, Data Engineer, and Data Analyst, to get an idea of which jobs are paid the most. 
 
 View my notebook with detailed steps here: [4_Salary_Analysis](Projects/4_Salary_Analysis.ipynb).
 
 #### Visualize Data 
 
 ```python
-sns.boxplot(data=df_India_top6, x='salary_year_avg', y='job_title_short', order=job_order)
+sns.boxplot(data=df_us_top6, x='salary_year_avg', y='job_title_short', order=job_order)
 
 ticks_x = plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K')
 plt.gca().xaxis.set_major_formatter(ticks_x)
@@ -144,12 +144,12 @@ plt.show()
 
 #### Results
 
-![Salary Distributions of Data Jobs in the India](Projects/Images/salary_distribution.png)  
+![Salary Distributions of Data Jobs in the us](Projects/Images/salary_distribution.png)  
 *Box plot visualizing the salary distributions for the top 6 data job titles.*
 
 #### Insights
 
-- There's a significant variation in salary ranges across different job titles. Senior Data Scientist positions tend to have the highest salary potential, with up to $600K, indicating the high value placed on advanced data skills and experience in the indIndiatry.
+- There's a significant variation in salary ranges across different job titles. Senior Data Scientist positions tend to have the highest salary potential, with up to $600K, indicating the high value placed on advanced data skills and experience in the industry.
 
 - Senior Data Engineer and Senior Data Scientist roles show a considerable number of outliers on the higher end of the salary spectrum, suggesting that exceptional skills or circumstances can lead to high pay in these roles. In contrast, Data Analyst roles demonstrate more consistency in salary, with fewer outliers.
 
@@ -157,7 +157,7 @@ plt.show()
 
 ### Highest Paid & Most Demanded Skills for Data Analysts
 
-Next, I narrowed my analysis and focIndiaed only on data analyst roles. I looked at the highest-paid skills and the most in-demand skills. I Indiaed two bar charts to showcase these.
+Next, I narrowed my analysis and focused only on data analyst roles. I looked at the highest-paid skills and the most in-demand skills. I used two bar charts to showcase these.
 
 #### Visualize Data
 
@@ -176,10 +176,10 @@ plt.show()
 ```
 
 #### Results
-Here's the breakdown of the highest-paid & most in-demand skills for data analysts in the India:
+Here's the breakdown of the highest-paid & most in-demand skills for data analysts in the us:
 
-![The Highest Paid & Most In-Demand Skills for Data Analysts in the India](Project/Images/paid_demand_skill.png)
-*Two separate bar graphs visualizing the highest paid skills and most in-demand skills for data analysts in the India.*
+![The Highest Paid & Most In-Demand Skills for Data Analysts in the us](Project/Images/paid_demand_skill.png)
+*Two separate bar graphs visualizing the highest paid skills and most in-demand skills for data analysts in the us.*
 
 #### Insights:
 
@@ -198,7 +198,7 @@ View my notebook with detailed steps here: [5_Optimal_Skills](Projects/4_Salary_
 #### Visualize Data
 
 ```python
-from adjIndiatText import adjIndiat_text
+from adjustText import adjust_text
 import matplotlib.pyplot as plt
 
 plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
@@ -208,8 +208,8 @@ plt.show()
 
 #### Results
 
-![Most Optimal Skills for Data Analysts in the India](Projects/Images/optimal_skills.png)    
-*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the India.*
+![Most Optimal Skills for Data Analysts in the us](Projects/Images/optimal_skills.png)    
+*A scatter plot visualizing the most optimal skills (high paying & high demand) for data analysts in the us.*
 
 #### Insights:
 
@@ -224,9 +224,9 @@ plt.show()
 
 Throughout this project, I deepened my understanding of the data analyst job market and enhanced my technical skills in Python, especially in data manipulation and visualization. Here are a few specific things I learned:
 
-- **Advanced Python Indiaage**: Utilizing libraries such as Pandas for data manipulation, Seaborn and Matplotlib for data visualization, and other libraries helped me perform complex data analysis tasks more efficiently.
+- **Advanced Python usage**: Utilizing libraries such as Pandas for data manipulation, Seaborn and Matplotlib for data visualization, and other libraries helped me perform complex data analysis tasks more efficiently.
 - **Data Cleaning Importance**: I learned that thorough data cleaning and preparation are crucial before any analysis can be conducted, ensuring the accuracy of insights derived from the data.
-- **Strategic Skill Analysis**: The project emphasized the importance of aligning one's skills with market demand. Understanding the relationship between skill demand, salary, and job availability allows for more strategic career planning in the tech indIndiatry.
+- **Strategic Skill Analysis**: The project emphasized the importance of aligning one's skills with market demand. Understanding the relationship between skill demand, salary, and job availability allows for more strategic career planning in the tech industry.
 
 
 # Insights
@@ -249,6 +249,6 @@ This project was not without its challenges, but it provided good learning oppor
 
 # Conclusion
 
-This exploration into the data analyst job market has been incredibly informative, highlighting the critical skills and trends that shape this evolving field. The insights I got enhance my understanding and provide actionable guidance for anyone looking to advance their career in data analytics. As the market continues to change, ongoing analysis will be essential to stay ahead in data analytics. This project is a good foundation for future explorations and underscores the importance of continuoIndia learning and adaptation in the data field.
+This exploration into the data analyst job market has been incredibly informative, highlighting the critical skills and trends that shape this evolving field. The insights I got enhance my understanding and provide actionable guidance for anyone looking to advance their career in data analytics. As the market continues to change, ongoing analysis will be essential to stay ahead in data analytics. This project is a good foundation for future explorations and underscores the importance of continuous learning and adaptation in the data field.
 
 
